@@ -3,19 +3,21 @@ import ProjectList from '@/components/ProjectList';
 import ProjectFilter from '@/components/ProjectFilter';
 import { getProjects } from '@/lib/projects-db';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata = {
-  title: 'School Projects | Akumu Maria Paris',
-  description: 'Browse my school projects',
+  title: 'Open Source Projects | Akumu Maria Paris',
+  description: 'Browse my open source projects',
 };
 
-export default async function SchoolProjectsPage() {
-  const projects = await getProjects('school');
+export default async function OpenSourceProjectsPage() {
+  const projects = await getProjects('opensource');
 
   return (
     <main className="container-main">
       <section className="section slide-up">
         <div className="mb-6">
-          <h1 className="heading-1 mb-1">School Projects</h1>
+          <h1 className="heading-1 mb-1">Open Source Projects</h1>
           <p className="text-slate-500 text-sm">
             {projects.length} project{projects.length !== 1 ? 's' : ''} found
           </p>
